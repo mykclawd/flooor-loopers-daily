@@ -22,7 +22,7 @@ That makes it a chore, and chores should be scheduled.
 ## Quickstart
 
 ```bash
-pip install web3 eth-account
+pip install -r requirements.txt
 cp .env.example .env     # set LOOPERS_VAULT, LOOPERS_NFT, and a signing path
 
 set -a && . ./.env && set +a

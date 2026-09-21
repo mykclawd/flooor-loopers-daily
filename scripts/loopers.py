@@ -306,6 +306,9 @@ def submit_local(chain, token_id):
     except Exception:  # noqa: BLE001 - chain may be legacy-gas only
         tx["gasPrice"] = w3.eth.gas_price
 
+    # `from` is needed for estimate_gas but older eth-account rejects it as an
+    # unrecognized field at signing time. Drop it once estimation is done.
+    tx.pop("from", None)
     signed = acct.sign_transaction(tx)
     raw = getattr(signed, "raw_transaction", None) or signed.rawTransaction
     try:

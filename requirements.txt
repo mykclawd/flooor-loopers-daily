@@ -1,0 +1,5 @@
+# Verified against web3 7.16.0 / eth-account 0.13.7.
+# web3 changed fee_history, max_priority_fee and the signed-tx raw attribute
+# across v5->v6->v7, so keep the floor at 6 and pin below 8.
+web3>=6,<8
+eth-account>=0.11
